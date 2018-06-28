@@ -60,7 +60,7 @@
 <!-- Result Container -->
 <div class="container-fluid2 bg-2 text-center">
     <h3 class="margin"> Nearby People Shaking:</h3>
-    <ul style="list-style-type:none;margin:0;padding:0">
+    <ul id="resultsUL" style="list-style-type:none;margin:0;padding:0">
         <li>
             Oliver Smith
             <br/>
@@ -157,13 +157,18 @@ function loadShakeMatesNearby() {
           li.appendChild(document.createTextNode("Element 4"));
           alert(this.responseText);
           var obj = JSON.parse(this.responseText);
-          alert(obj)
-          var first = obj[0];
-          alert(first);
-          alert(first.id);
-          var fullname = obj.fullname;
-          alert(first.fullname);
-          var profile = obj.profile;
+          alert(obj);
+          var count = 0;
+          for (count = 0; count < obj.count(); count++) {
+              var user = obj[0];
+              var id = user.id;
+              var name = user.fullname;
+              var profile = user.profile;
+
+              var output = "<li>" + name + "<br/><img src='images/profilepics/'"+profile+".jpg width='50' height='50'> <button value='"+id+"' class='btn btn-success'>Add</button></li>"
+              var ul = document.getElementById("resultsUL");
+              ul.innerHTML+=output;
+          };
 
 
        }
