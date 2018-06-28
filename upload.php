@@ -1,5 +1,9 @@
 
 <?php
+
+include_once("connection.php");
+
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -37,4 +41,42 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+$profile = $target_dir.$_FILES["fileToUpload"]["name"];
+
+$fullname = $_REQUEST["fullname"];
+
+$phone = $_REQUEST["phone"];
+
+$mail = $_REQUEST["mail"];
+
+$skype = $_REQUEST["skype"];
+
+$bio = $_REQUEST["bio"];
+
+
+
+
+
+$query = "INSERT INTO users SET fullname = '$fullname', phone = '$phone', mail = '$mail', skype = '$skype', bio = '$bio', profile = '$profile'";
+
+$result = mysqli_query($db_select, $query);
+
+
+
+if (!$result) {
+
+    # Error in the query
+
+    echo "Error running query $query : " . mysqli_error($db_select);
+
+    exit;
+
+}
+echo "Success";
+
+
+
+mysqli_close($db_select);
+
 ?>
