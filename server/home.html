@@ -156,6 +156,16 @@ function loadShakeMatesNearby() {
           var li = document.createElement("li");
           li.appendChild(document.createTextNode("Element 4"));
           alert(this.responseText);
+          var obj = JSON.parse(this.responseText);
+          alert(obj)
+          var first = obj[0];
+          alert(first);
+          alert(first.id);
+          var fullname = obj.fullname;
+          alert(first.fullname);
+          var profile = obj.profile;
+
+
        }
     };
     xhttp.open("GET", "http://team8.taskbinder.com/getUsers.php?user_id=1", true);
