@@ -63,7 +63,7 @@ body {
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
-button{
+input{
     color: white;
     text-align: center;
     width: 100%;
