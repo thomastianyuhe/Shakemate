@@ -109,20 +109,20 @@ function showPosition(position) {
 
 <!--Populate the contact list-->
 <script>
-function loadShakeMatesNearby() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var ul = document.getElementById("list");
-          var li = document.createElement("li");
-          li.appendChild(document.createTextNode("Element 4"));
-            // document.getElementById("demo").innerHTML =
-            // this.responseText;
-       }
-    };
-    xhttp.open("GET", "https://team8.taskbinder.com/addShake.php", true);
-    xhttp.send();
-}
+// function loadShakeMatesNearby() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function() {
+//         if (this.readyState == 4 && this.status == 200) {
+//           var ul = document.getElementById("list");
+//           var li = document.createElement("li");
+//           li.appendChild(document.createTextNode("Element 4"));
+//             // document.getElementById("demo").innerHTML =
+//             // this.responseText;
+//        }
+//     };
+//     xhttp.open("GET", "https://team8.taskbinder.com/addShake.php", true);
+//     xhttp.send();
+// }
 </script>
 <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
 <script>
@@ -140,7 +140,6 @@ function loadShakeMatesNearby() {
 
     //check if shake is supported or not.
     if(!("ondevicemotion" in window)){alert("Not Supported");}
-</script>
 </script>
 
 </body>

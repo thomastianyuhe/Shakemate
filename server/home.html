@@ -45,7 +45,7 @@
 <div class="container-fluid bg-1 text-center">
     <p>Welcome, Jane Doe</p>
 
-    <img name="logoSh" src="images/logo.png" onclick=""/>
+    <img name="logoSh" src="images/logo.png" onclick="imagePressed()" width ="200" height = "200" id ="logoSh"/>
     <br/>
     <br/>
 
@@ -55,10 +55,6 @@
         </a>
         <span class="popuptext" id="myPopup">Either Shake your device or Press the Image above to start the Shake</span>
     </div>
-
-
-
-
 </div>
 
 <!-- Result Container -->
@@ -99,6 +95,88 @@
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
     }
+</script>
+
+<script>
+var x = document.getElementById("logoSh");
+
+function imagePressed () {
+    // document.getElementById("demo").innerHTML = "Hello World";
+    //put your own code here etc.
+    // alert('shake!');
+    // var now = new Date();
+    getLocation();
+    alert("clicked");
+
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    alert(position.coords.latitude + ", " + position.coords.longitude);
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+   "<br>Longitude: " + position.coords.longitude;
+    var lat = position.coords.latitude
+    var long = position.coords.longitude
+    var shakeInfo = {
+      user_id : 123,
+      latitude : lat,
+      longitude : long
+    };
+    $.ajax({
+        url: 'https://team8.taskbinder.com/addShake.php',
+        type: 'GET',
+        data: shakeInfo,
+        async: false,
+        success: function(msg) {
+            alert(msg);
+        },
+        error: function(msg) {
+            alert(msg);
+        }
+    });
+    // alert(JSON.stringify(shakeInfo));
+}
+</script>
+
+<!--Populate the contact list-->
+<script>
+function loadShakeMatesNearby() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var ul = document.getElementById("list");
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode("Element 4"));
+            // document.getElementById("demo").innerHTML =
+            // this.responseText;
+       }
+    };
+    xhttp.open("GET", "https://team8.taskbinder.com/addShake.php", true);
+    xhttp.send();
+}
+</script>
+<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+<script>
+    //listen to shake event
+    var shakeEvent = new Shake({threshold: 15});
+    shakeEvent.start();
+    window.addEventListener('shake', function(){
+      getLocation();
+    }, false);
+
+    //stop listening
+    function stopShake(){
+        shakeEvent.stop();
+    }
+
+    //check if shake is supported or not.
+    if(!("ondevicemotion" in window)){alert("Not Supported");}
 </script>
 
 </html>
