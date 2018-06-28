@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>My Network</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="myProfile.html">Me</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="#">Contacts</a></li>
+                  <li><a href="#">Settings</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</body>
+</html>
+
+<script>
+var ul = document.createElement("ul");
+document.body.appendChild(ul);
+
+for (var i = 1; i <= 11; i++)
+{
+
+	var fnames = ["Oliver", "Olivia", "Amelia", "Harry", "George", "Emily", "Jack", "Isla", "Jacob", "Noah", "Ava"];
+	var lnames = ["Smith", "Jones", "Williams", "Taylor", "Davies", "Brown", "Wilson", "Evans", "Thomas", "Johnson", "Roberts"];
+    var li = document.createElement("li");  
+    li.className = "file";
+
+	var a = document.createElement("ul");
+	
+    var img = document.createElement("img");
+	img.setAttribute('src', 'images/profilepics/portrait'+i+'.jpg');
+	img.setAttribute('style', 'width:15vh;height:15vh;border-radius:50%; margin-right: 2vh;' );
+	
+	a.setAttribute('class', 'user');
+	a.setAttribute('style', 'color:black;padding:2vh;');
+	a.setAttribute('onmouseover', 'a.style.backgroundColor = grey'); 
+	a.setAttribute('onmouseout', 'a.style.backgroundColor = white');
+	
+	
+	a.appendChild(img);
+	a.innerHTML += fnames[i-1] + " " + lnames[i-1];
+	li.setAttribute('onclick', 'window.open("noprofile.html")');
+    li.appendChild(a);
+    ul.appendChild(li);
+}
+</script>
