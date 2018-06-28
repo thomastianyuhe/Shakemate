@@ -1,6 +1,6 @@
 body {
     line-height: 1.8;
-    color: #474e5d;
+    color: #ffffff;
     margin: 0;
     height: 100%;
     overflow: hidden
@@ -52,6 +52,7 @@ body {
     background-color: #1D3461;
 }
 #pwd{
+
     text-align: center;
     -webkit-border-radius: 0;
     border-radius: 0;
