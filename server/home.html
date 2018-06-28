@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 
@@ -25,19 +27,38 @@
             <a class="navbar-brand" href="myProfile.html">Me</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="network.html">Contacts</a></li>
+                <li><a href="EditMyProfile.html">Settings</a></li>
+                <li><a href="">Logout</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- Shake Container -->
+
+
+
 <div class="container-fluid bg-1 text-center">
-    <p>Welcome, User's name</p>
-    <img name="logoShadow" src="images/logo.png" onclick=""/>
+    <p>Welcome, Jane Doe</p>
+
+    <img name="logoSh" src="images/logo.png" onclick=""/>
+    <br/>
+    <br/>
+
+    <div class="popup" onclick="myFunction()">
+        <a href="#" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-info-sign"></span> Info
+        </a>
+        <span class="popuptext" id="myPopup">Either Shake your device or Press the Image above to start the Shake</span>
+    </div>
+
+
+
+
 </div>
 
 <!-- Result Container -->
@@ -45,7 +66,7 @@
     <h3 class="margin"> Nearby People Shaking:</h3>
     <ul style="list-style-type:none;margin:0;padding:0">
         <li>
-            FULL NAME
+            Oliver Smith
             <br/>
             <img src="images/profilepics/portrait1.jpg" width="50" height="50">
             <button class="btn btn-success">Add</button>
@@ -53,20 +74,31 @@
         </li>
         <br/>
         <li>
-            FULL NAME
+            Emily Brown
             <br/>
-            <img src="images/profilepics/portrait1.jpg" width="50" height="50" >
+            <img src="images/profilepics/portrait6.jpg" width="50" height="50" >
             <button class="btn btn-success">Add</button>
         </li>
         <br/>
         <li>
-            FULL NAME
+            Jack Willson
             <br/>
-            <img src="images/profilepics/portrait1.jpg" width="50" height="50">
+            <img src="images/profilepics/portrait7.jpg" width="50" height="50">
             <button class="btn btn-success">Add</button>
         </li>
+        <br/>
+        <br/>
     </ul>
 </div>
 
 </body>
+
+<script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>
+
 </html>
