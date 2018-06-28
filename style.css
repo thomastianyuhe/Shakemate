@@ -1,7 +1,6 @@
 body {
     font: 18px Montserrat, sans-serif;
     color: #f5f6f7;
-    padding-bottom: 100px;
     height: 100%;
     width: 100%;
 }
@@ -9,13 +8,13 @@ body {
 html{
     height: 100%;
     width: 100%;
-    padding-bottom: 100px;
 }
 
 p {font-size: 16px;
   color: #79a0d1;
 
 }
+
 .margin {margin-bottom: 45px;}
 .bg-1 {
     background-color: #1d3461; /* Green */
@@ -41,8 +40,10 @@ p {font-size: 16px;
 
 .container-fluid2 {
     padding-top: 20px;
-    padding-bottom: 20px;
-    height:100%;
+    padding-bottom: 80px;
+    height:auto;
+    width:auto;
+    overflow: auto;
 }
 
 .navbar {
