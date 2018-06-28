@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>ShakeMate - My Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="myProfile.html">Me</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="#">Contacts</a></li>
+                  <li><a href="#">Settings</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+
+  <h3 class="margin">My Profile</h3>
+
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+</div>
+
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="margin"><strong>Contact details</strong></h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+
+    </div>
+
+    <div class="col-sm-4">
+      <form action="/addUser.php">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit Name" name="fullname">
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit job title" name="bio">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit email" name="mail">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit Skype" name="skype">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit Phone" name="phone">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Edit work location" name="location">
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+    </div>
+
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Based on "Simple Me" by <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+</footer>
+
+</body>
+</html>
