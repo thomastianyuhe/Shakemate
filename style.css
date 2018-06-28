@@ -36,11 +36,12 @@ p {font-size: 16px;
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+	background-color: #DEDEDE;
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
 
 .user:hover {
-	background-color:#DEDEDE;
+	background-color: #D0D0D0;
 }
