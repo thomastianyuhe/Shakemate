@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
 
@@ -27,87 +25,33 @@
             <a class="navbar-brand" href="myProfile.html">Me</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="network.html">Contacts</a></li>
-                <li><a href="EditMyProfile.html">Settings</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Settings</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- Shake Container -->
-
-
-
 <div class="container-fluid bg-1 text-center">
-    <p>Welcome, Jane Doe</p>
-
-    <img name="logoSh" src="images/logo.png" onclick="imagePressed()" width ="200" height = "200" id ="logoSh"/>
-    <br/>
-    <br/>
-
-    <div class="popup" onclick="myFunction()">
-        <a href="#" class="btn btn-info btn-lg">
-            <span class="glyphicon glyphicon-info-sign"></span> Info
-        </a>
-        <span class="popuptext" id="myPopup">Either Shake your device or Press the Image above to start the Shake</span>
-    </div>
+    <a href="#" class="btn btn-default btn-lg">
+        <button type="button" id = "demo" onclick="buttonPressed()">Click Me!</button>
+        <!--span class="glyphicon glyphicon-search"></span> Shake -->
+    </a>
 </div>
 
-<!-- Result Container -->
-<div class="container-fluid2 bg-2 text-center">
-    <h3 class="margin"> Nearby People Shaking:</h3>
-    <ul style="list-style-type:none;margin:0;padding:0">
-        <li>
-            Oliver Smith
-            <br/>
-            <img src="images/profilepics/portrait1.jpg" width="50" height="50">
-            <button class="btn btn-success">Add</button>
-
-        </li>
-        <br/>
-        <li>
-            Emily Brown
-            <br/>
-            <img src="images/profilepics/portrait6.jpg" width="50" height="50" >
-            <button class="btn btn-success">Add</button>
-        </li>
-        <br/>
-        <li>
-            Jack Willson
-            <br/>
-            <img src="images/profilepics/portrait7.jpg" width="50" height="50">
-            <button class="btn btn-success">Add</button>
-        </li>
-        <br/>
-        <br/>
-    </ul>
-</div>
-
-</body>
-
 <script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
-</script>
+var x = document.getElementById("demo");
 
-<script>
-var x = document.getElementById("logoSh");
-
-function imagePressed () {
+function buttonPressed () {
     // document.getElementById("demo").innerHTML = "Hello World";
     //put your own code here etc.
     // alert('shake!');
     // var now = new Date();
     getLocation();
-    alert("clicked");
-    loadShakeMatesNearby();
+    // alert(now);
 
 }
 
@@ -145,22 +89,40 @@ function showPosition(position) {
 }
 </script>
 
+<!-- Result Container -->
+<div class="container-fluid bg-2">
+    <h3 class="margin">Nearby People Shaking:</h3>
+    <ul style="list-style-type:none" id = "list">
+        <li>
+            Profile Pic,
+            Name,
+            Options to Add
+        </li>
+        <li>
+            Profile Pic, Name, Options to Add
+        </li>
+        <li>
+            Profile Pic, Name, Options to Add
+        </li>
+    </ul>
+</div>
+
 <!--Populate the contact list-->
 <script>
-function loadShakeMatesNearby() {
-    alert("loading")
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var ul = document.getElementById("list");
-          var li = document.createElement("li");
-          li.appendChild(document.createTextNode("Element 4"));
-          alert(this.responseText);
-       }
-    };
-    xhttp.open("GET", "http://team8.taskbinder.com/getUsers.php?user_id=1", true);
-    xhttp.send();
-}
+// function loadShakeMatesNearby() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function() {
+//         if (this.readyState == 4 && this.status == 200) {
+//           var ul = document.getElementById("list");
+//           var li = document.createElement("li");
+//           li.appendChild(document.createTextNode("Element 4"));
+//             // document.getElementById("demo").innerHTML =
+//             // this.responseText;
+//        }
+//     };
+//     xhttp.open("GET", "https://team8.taskbinder.com/addShake.php", true);
+//     xhttp.send();
+// }
 </script>
 <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
 <script>
@@ -180,4 +142,5 @@ function loadShakeMatesNearby() {
     if(!("ondevicemotion" in window)){alert("Not Supported");}
 </script>
 
+</body>
 </html>
