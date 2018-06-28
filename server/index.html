@@ -4,8 +4,7 @@
   <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Bootstrap Theme Simply Me</title>
   <meta charset="utf-8">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="indexStyle.css">
   <link rel="shortcut icon" href="36311766_2056305621069850_5198534114776449024_n.png">
@@ -26,10 +25,11 @@
 
 <div class="container-fluid2 bg-2" id="buttons">
 
-  <input type="text" class="form-control" id="usr" placeholder="Username...">
-  <input type="password" class="form-control" id="pwd" placeholder="Password...">
 
-  <form method="post" action="home.html">
+  <form method="post" action="login.php">
+    <input type="text" name = "user" class="form-control" id="usr" placeholder="Username...">
+    <input type="password" name = "pass" class="form-control" id="pwd" placeholder="Password...">
+
     <button type="submit">Login</button>
   </form>
   <input type="button" onclick="location.href='EditMyProfile.html';" value="Register" />
